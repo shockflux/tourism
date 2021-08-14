@@ -1,0 +1,360 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/styles/index.css' %}">
+<style>
+    .header-title{
+    font-size: 15px;
+    font-family: 'Mali', sans-serif;
+    font-weight: 600;
+    letter-spacing: 12px;
+    color: white;
+}
+    .header-main-text{
+        font-family: 'Roboto',sans-serif;
+        font-size: 65px;
+        font-weight: 900;
+        line-height: 1.2em;
+        color: white;
+
+    }
+
+    .header-subtext{
+        font-family: 'Roboto',sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.5;
+        color: #7a7a7a;
+    }
+
+    .mid-star{
+        color:gray;
+        font-size: 40px;
+        margin-left: 30%;
+    }
+    .card:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+{% endblock %}
+{% block content %}
+<!-- Top -->
+<div class="marg-top">
+    <h5 class="text-center header-title">New Zeland</h5>
+    <h2 class="text-center mt-3 header-main-text">Explore and Travel</h2>
+    <h4 class="text-center mt-5 header-subtext">TO ABOVE AND BEYOND</h4>
+    <div class="row justify-content-center">
+        <form class="form-inline form-padding">
+            <div class="form-group">
+                <input type="text" class="form-control ml-5" name="destination" placeholder="Destination">
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control ml-5" name="date" placeholder="Date">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control ml-5" name="sortby" placeholder="SortBy">
+            </div>
+            <div class="col-sm-3 col-md-1">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary ml-5">Search</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+<!-- Plan the vaction text -->
+<div class="container mt-5">
+    <h3 class="text-center title-heading">Plan The</h3>
+    <h1 class="text-center title-subtext">Perfect Vacation</h1>
+</div>
+<!-- Tour Cards Swaroop Bhai have fun changing this to dynamic -->
+<!-- Kudhi -->
+
+<div class="content-width">
+    <div class="row mt-5 pt-3">
+        {% for dests in dests %}
+        <div class="col-md-3">
+            
+            <div class="card card-border">
+                <a href="/tours/{{ dests.name }}">
+                    <img src="{{ dests.img.url }}" alt="Tour Image" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title card-heading-font">{{ dests.name }}</h3>
+                    <h4 class="card-text card-subheading-font">{{ dests.name }}</h4>
+                    <h5 class="card-text card-subtext"><!--{{ dests.desc }}--> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quae nostrum ullam doloremque labore exercitationem!</h5>
+                    <div class="row">
+                        <div class="col-md-8 card-subtext"><span class="fa fa-star card-star"></span> <span class="card-star-text"> 7.0 super</span></div>
+                        <div class="col-md-4 mt-1 card-subtext card-days-text">5 days</div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center section2-heading">Why choose us</h2>
+    <h2 class="text-center section2-subtext">Happy NZ Tours</h2>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card card-border">
+                <i class="fas fa-search-location card-title ml-5 pl-4 mt-5 "></i>
+                <div class="card-body">
+                    <h3 class="card-title text-center">Sight Seeing</h3>
+                    <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quisquam atque qui soluta praesentium, dolorum inventore recusandae, ab, provident doloremque sit optio earum. Nesciunt magni veritatis, adipisci libero fugit enim.</p>
+                    <button type="submit" class="btn btn-dark ml-5">Read More</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <i class="fas fa-search-location card-title ml-5 pl-4 mt-5 "></i>
+                <div class="card-body">
+                    <h3 class="card-title text-center">Sight Seeing</h3>
+                    <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quisquam atque qui soluta praesentium, dolorum inventore recusandae, ab, provident doloremque sit optio earum. Nesciunt magni veritatis, adipisci libero fugit enim.</p>
+                    <button type="submit" class="btn btn-dark ml-5">Read More</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <i class="fas fa-search-location card-title ml-5 pl-4 mt-5 "></i>
+                <div class="card-body">
+                    <h3 class="card-title text-center">Sight Seeing</h3>
+                    <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quisquam atque qui soluta praesentium, dolorum inventore recusandae, ab, provident doloremque sit optio earum. Nesciunt magni veritatis, adipisci libero fugit enim.</p>
+                    <button type="submit" class="btn btn-dark ml-5">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- The spot where the fuckin video comes I am not sure how much this is gonna affect the page loading time -->
+<!-- This one is a bit tricky -->
+<!-- The designer is not sure what to place over here -->
+<!-- So Lets go The random things under video -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <i class="fas fa-star mt-5 mid-star"></i>
+            <h3>Credit Card Processing</h3>
+            <h4>Lorem ipsum dolor sit amet consectetur</h4>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-star mt-5 mid-star"></i>
+            <h3>Credit Card Processing</h3>
+            <h4>Lorem ipsum dolor sit amet consectetur</h4>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-star mt-5 mid-star"></i>
+            <h3>Credit Card Processing</h3>
+            <h4>Lorem ipsum dolor sit amet consectetur</h4>
+        </div>
+    </div>
+</div>
+
+<!-- This thing is similar to the above tour packages.Swaroop Bhai check if the logic is also same -->
+<div class="container mt-5">
+    <h3 class="text-center title-heading">Also you might like</h3>
+    <h1 class="text-center title-subtext ">Go and Discover</h1>
+</div>
+<!-- Tour Cards Swaroop Bhai have fun changing this to dynamic -->
+<!-- Kudhi -->
+
+
+<div class="content-width">
+    <div class="row mt-5 pt-3">
+        {% for dests in dests %}
+        <div class="col-md-3">
+            
+            <div class="card card-border">
+                <a href="/tours/{{ dests.name }}">
+                    <img src="{{ dests.img.url }}" alt="Tour Image" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title card-heading-font">{{ dests.name }}</h3>
+                    <h4 class="card-text card-subheading-font">{{ dests.name }}</h4>
+                    <h5 class="card-text card-subtext"><!--{{ dests.desc }}--> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quae nostrum ullam doloremque labore exercitationem!</h5>
+                    <div class="row">
+                        <div class="col-md-8 card-subtext"><span class="fa fa-star card-star"></span> <span class="card-star-text"> 7.0 super</span></div>
+                        <div class="col-md-4 mt-1 card-subtext card-days-text">5 days</div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- I am not sure how i am going to pull this off -->
+<!-- The left panel of services -->
+<div class="container">
+    <!-- FOR SWAROOP: This is nested grid layout -->
+    <!-- Nested grid layout : Row inside row Just google to get an image so it will be easy for you -->
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <h4 class="services-line1">Services</h4>
+                </div>
+                <div class="col-12 mb-5">
+                    <h4 class="services-line2">We use Unique custom built trip  to match your use cases</h4>
+
+                </div>
+                <div class="col-12 mb-5">
+                    <h4 class="services-line3">Trips made to explore</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="accordion">
+                <div class="card services-right">
+                    <div class="card-header" id="headingOne">
+                        <h4 class="mb-0">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <a data-toggle="collapse" data-target="#strategy">
+                                        Brand Strategy
+                                </div>
+                                <div class="col-md-1">
+                                    <span class="caret-padding"><span class="fas fa-caret-right"></span></span>
+                                </div>
+                            </div>
+                                     </a> 
+                        </h4>
+                    </div>
+                    <div class="collapse" id="strategy" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, magni.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headinTwo">
+                        <h4 class="mb-0">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <a data-toggle="collapse" data-target="#how">Art Direction
+                                </div>
+                                <div class="col-md-1"><span class="caret-padding"><span class="fas fa-caret-right"></span></span></div>
+                            </div>
+                        </a>    
+                        </h4>
+                    </div>
+                    <div class="collapse" id="how" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, asperiores.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headinTwo">
+                        <h4 class="mb-0">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <a data-toggle="collapse" data-target="#master">Mastering the art of ole
+                                </div>
+                                <div class="col-md-1">
+                                    <span class="fas fa-caret-right "></span>
+                                </div>
+                            </div>
+                           </a>
+                        </h4>
+                    </div>
+                    <div class="collapse" id="master" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, asperiores.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headinTwo">
+                        <h4 class="mb-0">
+                            <div class="row">
+                                <div class="col-md-11">
+
+                                    <a data-toggle="collapse" data-target="#when">Web Development
+
+                                </div>
+                                <div class="col-md-1">
+                                    <span class="fa fa-caret-right"></span>
+                                </div>
+                            </div>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="collapse" id="when" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, asperiores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- The fuck again -->
+<div class="container mt-5">
+    <h3 class="text-center title-heading">Also you might like</h3>
+    <h1 class="text-center title-subtext ">Grab the Deal</h1>
+    <div class="row">
+        <div class="col-md-4">
+            {% for dests in dests %}
+                {% if dests.offer %}
+            <div class="card card-border">
+                <img src="{{ dests.img.url }}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title card-heading-font">{{ dests.name }}</h3>
+                    <h4 class="card-text card-subheading-font">{{ dests.name }}</h4>
+                    <h5 class="card-text card-subtext"><!--{{ dests.desc }}--> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quae nostrum ullam doloremque labore exercitationem!</h5>
+                    <div class="row">
+                        <div class="col-md-8 card-subtext"><span class="fa fa-star card-star"></span> <span class="card-star-text"> 7.0 super</span></div>
+                        <div class="col-md-4 mt-1 card-subtext card-days-text">5 days</div>
+                    </div>
+                </div>
+            </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<h2 class="text-center mt-5 title-subtext">Customer Reviews</h2>
+<div class="review-width">
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, dolorem!</p>
+                    <img src="{% static 'img/card-img.jpg' %}" class="review-img" alt="">
+                    <h3 class="mb-0 ml-5 pl-3">Swaroop bafna </h3>
+                    <h6 class="ml-5 pl-3">Backend Dev</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, dolorem!</p>
+                    <img src="{% static 'img/card-img.jpg' %}" class="review-img" alt="">
+                    <h3 class="mb-0 ml-5 pl-3">Swaroop bafna </h3>
+                    <h6 class="ml-5 pl-3">Backend Dev</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, dolorem!</p>
+                    <img src="{% static 'img/card-img.jpg' %}" class="review-img" alt="">
+                    <h3 class="mb-0 ml-5 pl-3">Swaroop bafna </h3>
+                    <h6 class="ml-5 pl-3">Backend Dev</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

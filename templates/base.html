@@ -1,0 +1,248 @@
+{% load static %}
+{% static 'img' as baseURL %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.webp' %}">
+    <title>Happy NZ Tours</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'fonts/css/font-awesome.min.css' %}"> -->
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'fonts/css/font-awesome.min.css' %}">
+    <script src="https://kit.fontawesome.com/f018d0b690.js" crossorigin="anonymous"></script>
+    <!-- Fonts -->
+    <!-- Card Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Satisfy&display=swap" rel="stylesheet">
+    <!-- Title Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@500&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <!-- Footer fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+    <style>
+        .navbar-nav li a{
+            color:black;
+        }
+        li a {
+            /* font-size: 25px; */
+        }
+        li a:hover{
+            color:white;
+        }
+        .row {
+        margin-left: 0px;
+        margin-right: 0px;
+        }
+        .bg-image{
+            background-image: url("{% static 'img/home-background.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6);
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+        .dropdown-item{
+            border-bottom: 1px dashed gray;
+        }
+        .navbar-fixed-top.scrolled {
+        background-color: #fff !important;
+        transition: background-color 200ms linear;
+        }
+        .navbar-fixed-top.scrolled {
+        background-color: #fff !important;
+        transition: background-color 200ms linear;
+        }
+        footer{
+            background-color: #0A1012;
+        }
+        .footer-col-1{
+            color:white;
+            font-size: 40px;
+            font-family: 'Inter',sans-serif;
+        }
+        .footer-col-heading{
+            color: #32E0C4;
+            font-family: 'Roboto',sans-serif;
+            font-size: 20px;
+            font-weight: 600;   
+        }
+
+        .footer-col-item{
+            color:#54595f;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+
+        .footer-col-3{
+            color:#F3D7B0;
+            font-size: 20px;
+            font-family: 'Roboto',sans-serif;
+            font-weight: 600;
+        }
+        .footer-2{
+            color: white;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+        }
+
+        @media only screen and (min-width: 768px){
+            .footer-margin-1{
+                margin-top:45%;
+                margin-bottom: 45%;
+                margin-left: 10%;
+            }
+            .footer-margin-2{
+                margin-top:45%;
+            }
+            .footer-list{
+                padding: 1% !important;
+                margin:0 !important;
+                list-style: none;
+            }
+            .footer-margin-3{
+                margin-top:27%;
+            }
+            .footer-social-icons{
+                font-size: 40px;
+                color: blue;
+            }
+            .copyright-padding{
+                padding-left: 30%;
+            }
+            footer{
+                margin-top: 5%;
+            }
+        }
+    </style>
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a href="#" class="navbar-brand">
+            <img src="{% static 'img/logo.webp' %}" alt="logo" class="h-50 w-50">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="NavbarMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="dayTours" role="button" data-toggle="dropdown">Day Tours</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Bay of Islands</a>
+                        <a href="#" class="dropdown-item">NZ Place 2</a>
+                        <a href="#" class="dropdown-item">NZ place 3</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="dayTours" role="button" data-toggle="dropdown">North Island Tours</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Bay of Islands</a>
+                        <a href="#" class="dropdown-item">NZ Place 2</a>
+                        <a href="#" class="dropdown-item">NZ place 3</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="dayTours" role="button" data-toggle="dropdown">South Island Tours</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Bay of Islands</a>
+                        <a href="#" class="dropdown-item">NZ Place 2</a>
+                        <a href="#" class="dropdown-item">NZ place 3</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Self Drive Tours</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                {% if user.is_authenticated %}
+                <p style="border: 3px solid black;">Hi, {{ user.first_name }} {{ user.last_name }}</p>
+                <p style="border: 3px solid black;"><a href="{% url 'logout' %}">Logout</a> </p>
+                {% else %}
+                <button class="btn btn-primary"><a href="/login">LOGIN</a></button>
+                <button class="btn btn-primary"><a href="/register">SIGNUP</a> </button>
+                {% endif %}
+
+            </span>
+        </div>
+    </nav>
+    <div class="bg-image">
+        {% block content %}
+        {% endblock %}
+        <!-- JS -->
+        <footer>
+            <!-- <div class="container"> -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="footer-margin-1 footer-col-1">Happy Nz Tours</h3>
+                    </div>
+                    <div class="col-md-2">
+                        <h4 class="footer-margin-2 footer-col-heading">Tours</h4>
+                        <ul class="footer-list footer-col-item">
+                            <li>ListItem</li>
+                            <li>ListItem</li>
+                            <li>ListItem</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <h4 class="footer-margin-2 footer-col-heading">Tours</h4>
+                        <ul class="footer-list footer-col-item">
+                            <li>ListItem</li>
+                            <li>ListItem</li>
+                            <li>ListItem</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <h4 class="footer-margin-2 footer-col-heading">Tours</h4>
+                        <ul class="footer-list footer-col-item">
+                            <li>ListItem</li>
+                            <li>ListItem</li>
+                            <li>ListItem</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h3 class="footer-margin-3 footer-col-3">Follow</h3>
+                        <i class="fab fa-facebook footer-social-icons"></i>
+                        <i class="fab fa-twitter footer-social-icons"></i>
+                        <i class="fab fa-youtube footer-social-icons"></i>
+                        <i class="fab fa-pinterest footer-social-icons"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="container footer-2">
+                <div class="row">
+                    <div class="col-md-3">
+                        Terms And Conditions
+                    </div>
+                    <div class="col-md-2">
+                        Privacy Policy
+                    </div>
+                    <div class="col-md-2">
+                        SiteMap
+                    </div>
+                    <div class="col-md-5">
+                        <h5 class="copyright-padding">CopyRights 2020@HINDUSTAN UNIVERSITY</h5>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!-- <script src="{% static '/js/bootstrap.min.js' %}"></script> -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+            </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+body{
+    background-color:#fafefe;
+}
+
+.bg-color-card{
+    background-color: #eec3bb;
+}
+.card-color{
+    background-color: #eec3bb;
+}
+.card{
+    border: 5px solid black;
+}
+.form-style-destination{
+    border-top:3px solid black;
+    border-left:3px solid black;
+    border-bottom:3px solid black;
+    margin-bottom: 1em;
+    background-color:#eec3bb;
+}
+.form-style-adventure{
+    border-top:3px solid black;
+    border-bottom:3px solid black;
+    margin-bottom: 1em;
+    background-color:#eec3bb;
+}
+
+.form-style-guests{
+    border-top:3px solid black;
+    border-right:3px solid black;
+    border-bottom:3px solid black;
+    margin-bottom: 1em;
+    background-color:#eec3bb;
+}
+.inline-block{
+    display: inliine-block;
+}
+.search-box{
+    border:3px solid black;
+}
+
+.search-icon{
+    border: 3px solid black;
+}

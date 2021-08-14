@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<style>
+    .row-border{
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
+    }
+
+    .col-border{
+        border-right: 2px solid black;
+        padding-top: 25px;
+        padding-bottom: 5px;
+        padding-left: 100px;
+    }
+
+    .col-border-1{
+        border-left: 2px solid black;
+    }
+
+    .text-decoration{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ objects.img.url }}" alt="Carousel-test"  class="h-100 w-100">
+            </div>
+            <!-- <div class="carousel-item">
+                <img src="{% static 'img/download.jpeg' %}" alt="">
+            </div> -->
+            
+        </div>
+    </div>
+    <div class="text-center mb-3">
+        <button class="btn btn-success ">Book Now</button>
+    </div>
+</div>
+    <div class="row row-border mb-5">
+        <div class="col-1 col-border col-border-1">
+             
+        </div>
+        <div class="col-2 col-border">
+            <p>{{ objects.days }} Days</p>
+            <p>{{ objects.nights }} Night</p>
+        </div>
+        <div class="col-2  col-border">
+            <p>${{ objects.price }}</p>
+            <p>All Included</p>
+        </div>
+        <div class="col-3 col-border">
+            <p>Awesome icons</p>
+        </div>
+        <div class="col-2 col-border">
+            <p> call us</p>
+        </div>
+    </div>
+    <h4 class="text-center">{{ objects.name }}</h4>
+    <div class="text-decoration">
+    <p>{{ objects.desc }}</p>
+    </div>
+
+    <div class="text-center mb-3">
+        <button class="btn btn-success ">Book Now</button>
+    </div>
+
+{% endblock %}
